@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Paylocity.CodeChallenge
+namespace Paylocity.CodeChallenge.API
 {
     public class Program
     {

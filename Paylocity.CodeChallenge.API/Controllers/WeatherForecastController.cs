@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace Paylocity.CodeChallenge.Controllers
+namespace Paylocity.CodeChallenge.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

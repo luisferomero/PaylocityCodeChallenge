@@ -1,6 +1,6 @@
 using System;
 
-namespace Paylocity.CodeChallenge
+namespace Paylocity.CodeChallenge.API
 {
     public class WeatherForecast
     {
