@@ -9,17 +9,17 @@ namespace Paylocity.CodeChallenge.BusinessLogic.Services
 {
     public class DeductionCalculationService : IDeductionCalculationService
     {
-        public decimal CalculatePaycheckDeduction(Employee employee, int numberOfPaychecks)
+        public decimal CalculatePaycheckDeduction(Employee employee, int numberOfPaychecks = 26)
         {
-            return CalculateAnualDeduction(employee) / numberOfPaychecks;
+            return Math.Round(CalculateTotalAnualDeduction(employee) / numberOfPaychecks , 2);
         }
 
-        public decimal CalculateAnualDeduction(Employee employee)
+        public decimal CalculateTotalAnualDeduction(Employee employee)
         {
-            return employee.Dependents.Sum(dependent => CalculateDeduction(dependent)) + CalculateDeduction(employee);
+            return employee.Dependents.Sum(dependent => CalculateAnualDeduction(dependent)) + CalculateAnualDeduction(employee);
         }
 
-        public decimal CalculateDeduction(IPerson person)
+        public decimal CalculateAnualDeduction(IPerson person)
         {
             return person.CostOfBenefits - (person.CostOfBenefits * GetDiscountRate(person));
         }

@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.CodeChallenge.API
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.CodeChallenge.Utils", "Paylocity.CodeChallenge.Utils\Paylocity.CodeChallenge.Utils.csproj", "{BE5DFAFA-786E-41A1-80DA-B987C6341641}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paylocity.CodeChallenge.Tests", "Paylocity.CodeChallenge.Tests\Paylocity.CodeChallenge.Tests.csproj", "{F4978F56-203D-469E-9C0F-B0E229479F3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,11 +41,16 @@ Global
 		{BE5DFAFA-786E-41A1-80DA-B987C6341641}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE5DFAFA-786E-41A1-80DA-B987C6341641}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE5DFAFA-786E-41A1-80DA-B987C6341641}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4978F56-203D-469E-9C0F-B0E229479F3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4978F56-203D-469E-9C0F-B0E229479F3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4978F56-203D-469E-9C0F-B0E229479F3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4978F56-203D-469E-9C0F-B0E229479F3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{16B5889B-9E99-4D42-A46D-5DB85B02E12D} = {9CB098BD-A693-4880-B5C3-DDAF6BDEA8B2}
 		{D18E0533-FA09-496F-BC60-E2B110082170} = {038059DA-8AED-4990-97A5-F4A134DA3F1A}
 		{51DD6B86-B028-4CA7-A14F-524064E4B621} = {1E7190FF-0622-4571-B351-DB082BFA91F7}
 		{BE5DFAFA-786E-41A1-80DA-B987C6341641} = {038059DA-8AED-4990-97A5-F4A134DA3F1A}
+		{F4978F56-203D-469E-9C0F-B0E229479F3C} = {4AB53A12-4B5E-40E1-8A39-354D1A1418D0}
 	EndGlobalSection
 EndGlobal
