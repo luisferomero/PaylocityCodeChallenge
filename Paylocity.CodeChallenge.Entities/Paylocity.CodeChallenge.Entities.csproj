@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Entities\" />
+    <Folder Include="Entities\Interfaces\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Paylocity.CodeChallenge.Utils\Paylocity.CodeChallenge.Utils.csproj" />

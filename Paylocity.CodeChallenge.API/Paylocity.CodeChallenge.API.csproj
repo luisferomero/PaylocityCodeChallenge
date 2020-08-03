@@ -9,4 +9,18 @@
     <Folder Include="DTO\" />
     <Folder Include="Mapper\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Paylocity.CodeChallenge.Entities\Paylocity.CodeChallenge.Entities.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Paylocity.CodeChallenge.BusinessLogic\Paylocity.CodeChallenge.BusinessLogic.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+    <ProjectReference Include="..\Paylocity.CodeChallenge.Utils\Paylocity.CodeChallenge.Utils.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+  </ItemGroup>
 </Project>
