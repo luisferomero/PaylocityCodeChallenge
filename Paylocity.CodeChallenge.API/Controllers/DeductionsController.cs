@@ -28,7 +28,10 @@ namespace Paylocity.CodeChallenge.API.Controllers
         // GET: api/deductions
         [HttpPost]
         public ActionResult<DeductionsReportDto> CalculateDeductions([FromBody] EmployeeDto employee)
-        {         
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
+
             var employeeEntity = _mapper.Map<Employee>(employee);
 
             var result = new DeductionsReportDto()

@@ -3,7 +3,7 @@ namespace Paylocity.CodeChallenge.Utils.Enums
 {
     public enum DependentType
     {
-        Child = 1,
-        Spouse
+        Spouse = 1,
+        Child,
     }
 }
