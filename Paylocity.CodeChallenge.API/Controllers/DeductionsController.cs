@@ -25,11 +25,31 @@ namespace Paylocity.CodeChallenge.API.Controllers
 
 
         // GET: api/deductions
-        [HttpGet]
-        public ActionResult<DeductionsReportDto> Get([FromQuery] EmployeeDto employee)
+        [HttpPost]
+        public ActionResult<DeductionsReportDto> Get([FromBody] EmployeeDto employee)
         {
             var employeeEntity = _mapper.Map<Employee>(employee);
-            return Ok();
+
+            var result = new DeductionsReportDto()
+            {
+                TotalPayCheckDeduction = _deductionCalculationService.CalculatePaycheckDeduction(employeeEntity, 26),
+
+                DependentsPayCheckDeduction = _deductionCalculationService.CalculateDependentPaycheckDeduction(employeeEntity , 26),
+
+                EmployeePayCheckDeduction = _deductionCalculationService.CalculatePaycheckDeduction(employeeEntity, 26),
+
+                EmployeeAnualDeduction = _deductionCalculationService.CalculateAnualDeduction(employeeEntity),
+
+                DependentsAnualDeduction = _deductionCalculationService.CalculateDependentsAnualDeduction(employeeEntity),
+
+                TotalAnualDeduction = _deductionCalculationService.CalculateTotalAnualDeduction(employeeEntity),
+
+                EmployeePaycheckAfterDeductions = (employeeEntity.Salary/26) - _deductionCalculationService.CalculatePaycheckDeduction(employeeEntity, 26),
+
+                EmployeeAnualPayAfterDeductions = employeeEntity.Salary - _deductionCalculationService.CalculateTotalAnualDeduction(employeeEntity),
+            };
+
+            return Ok(result);
         }
     }
 }

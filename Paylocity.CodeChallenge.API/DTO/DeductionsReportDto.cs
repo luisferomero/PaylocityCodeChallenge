@@ -13,7 +13,7 @@ namespace Paylocity.CodeChallenge.API.DTO
 
         public decimal DependentsAnualDeduction { get; set; }
 
-        public decimal TotaAnualDeduction { get; set; }
+        public decimal TotalAnualDeduction { get; set; }
 
         public decimal EmployeePaycheckAfterDeductions { get; set; }
 

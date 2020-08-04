@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Paylocity.CodeChallenge.BusinessLogic.Services;
 using Paylocity.CodeChallenge.BusinessLogic.Services.Interfaces;
 
 namespace Paylocity.CodeChallenge.API
@@ -28,10 +29,9 @@ namespace Paylocity.CodeChallenge.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddScoped<IDeductionCalculationService, IDeductionCalculationService>();
+            services.AddScoped<IDeductionCalculationService, DeductionCalculationService>();
             services.AddAutoMapper(typeof(Startup));
-
-
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +41,17 @@ namespace Paylocity.CodeChallenge.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Paylocity Code challenge API V1");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
 
