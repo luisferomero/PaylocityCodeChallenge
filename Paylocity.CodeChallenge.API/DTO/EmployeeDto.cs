@@ -11,6 +11,6 @@ namespace Paylocity.CodeChallenge.API.DTO
 
         public decimal CostOfBenefits { get; set; }
 
-        public List<DependentDto> Dependents { get; set; }
+        public List<DependentDto?> Dependents { get; set; }
     }
 }

@@ -10,6 +10,7 @@ using Paylocity.CodeChallenge.Entities.Entities;
 
 namespace Paylocity.CodeChallenge.API.Controllers
 {
+    [ApiController]
     [Route("api/[controller]")]
     public class DeductionsController : Controller
     {
@@ -26,8 +27,8 @@ namespace Paylocity.CodeChallenge.API.Controllers
 
         // GET: api/deductions
         [HttpPost]
-        public ActionResult<DeductionsReportDto> Get([FromBody] EmployeeDto employee)
-        {
+        public ActionResult<DeductionsReportDto> CalculateDeductions([FromBody] EmployeeDto employee)
+        {         
             var employeeEntity = _mapper.Map<Employee>(employee);
 
             var result = new DeductionsReportDto()
@@ -38,15 +39,15 @@ namespace Paylocity.CodeChallenge.API.Controllers
 
                 EmployeePayCheckDeduction = _deductionCalculationService.CalculatePaycheckDeduction(employeeEntity, 26),
 
-                EmployeeAnualDeduction = _deductionCalculationService.CalculateAnualDeduction(employeeEntity),
+                EmployeeAnnualDeduction = _deductionCalculationService.CalculateAnualDeduction(employeeEntity),
 
-                DependentsAnualDeduction = _deductionCalculationService.CalculateDependentsAnualDeduction(employeeEntity),
+                DependentsAnnualDeduction = _deductionCalculationService.CalculateDependentsAnualDeduction(employeeEntity),
 
-                TotalAnualDeduction = _deductionCalculationService.CalculateTotalAnualDeduction(employeeEntity),
+                TotalAnnualDeduction = _deductionCalculationService.CalculateTotalAnualDeduction(employeeEntity),
 
                 EmployeePaycheckAfterDeductions = (employeeEntity.Salary/26) - _deductionCalculationService.CalculatePaycheckDeduction(employeeEntity, 26),
 
-                EmployeeAnualPayAfterDeductions = employeeEntity.Salary - _deductionCalculationService.CalculateTotalAnualDeduction(employeeEntity),
+                EmployeeAnnualPayAfterDeductions = employeeEntity.Salary - _deductionCalculationService.CalculateTotalAnualDeduction(employeeEntity),
             };
 
             return Ok(result);
