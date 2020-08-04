@@ -9,6 +9,6 @@ namespace Paylocity.CodeChallenge.API.DTO
 
         public decimal CostOfBenefits { get; set; }
 
-        public int DependentType { get; set; }
+        public DependentType DependentType { get; set; }
     }
 }
